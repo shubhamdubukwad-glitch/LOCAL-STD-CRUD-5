@@ -44,7 +44,7 @@ const stdcontainer = document.getElementById('stdcontainer');
 // localStorage.setItem('stdArr',JSON.stringify(stdArr))
 //stdread//
 
-let stdArr = JSON.parse(localStorage.getItem('stdArr'))
+let stdArr = JSON.parse(localStorage.getItem('stdArr'))||[]
 cl(stdArr)
 
 //raedtodo//
@@ -150,10 +150,10 @@ function onupdatestd() {
     tr[3].innerText = update_OBJ.email;
     tr[4].innerText = update_OBJ.contect;
 
+    addstdBtn.classList.remove('d-none');
+    updatestdBtn.classList.add('d-none');
     stdform.reset()
-    addstdBtn.classList.add('d-none');
-    updatestdBtn.classList.remove('d-none');
-
+    
 
 
     swal.fire({
