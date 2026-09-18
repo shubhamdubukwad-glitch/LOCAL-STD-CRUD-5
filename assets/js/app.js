@@ -43,8 +43,6 @@ const stdcontainer = document.getElementById('stdcontainer');
 
 // localStorage.setItem('stdArr',JSON.stringify(stdArr))
 //stdread//
-let stdjson = localStorage.getItem('stdArr');
-cl(stdjson)
 
 let stdArr = JSON.parse(localStorage.getItem('stdArr'))
 cl(stdArr)
@@ -88,6 +86,7 @@ function oncreatestd(eve) {
     stdArr.push(stdObj);
     localStorage.setItem('stdArr', JSON.stringify(stdArr))
     let tr = document.createElement('tr')
+    tr.id=stdObj.id;
     tr.innerHTML = ` <td>${stdArr.length}</td>
                                         <td>${stdObj.fname}</td>
                                         <td>${stdObj.lname}</td>
